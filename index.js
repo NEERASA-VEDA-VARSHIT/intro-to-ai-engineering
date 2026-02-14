@@ -194,6 +194,8 @@ async function handleGiftRequest(e) {
       model: process.env.AI_MODEL,
       messages,
       stream: true,
+    //   temperature: 0.7, - consider adjusting temperature for more creative vs. focused responses - in probability terms, higher temp = more randomness, lower temp = more deterministic. Start with 0.7 and experiment!
+    //   top_p: 1, - consider adjusting top_p for controlling response diversity - in probability terms, top_p limits the token selection to a subset of the most likely tokens whose cumulative probability exceeds the top_p value. Start with 1 (no limit) and experiment with lower values for more focused responses.
     });
 
     // Show output container immediately for streaming feedback
